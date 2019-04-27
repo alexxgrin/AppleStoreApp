@@ -15,6 +15,9 @@
 		8EE080522274AEFF00D7EBDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE080502274AEFF00D7EBDC /* LaunchScreen.storyboard */; };
 		8EE0805A2274AFB900D7EBDC /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE080592274AFB900D7EBDC /* BaseTabBarController.swift */; };
 		8EE0805D2274BB5100D7EBDC /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0805C2274BB5100D7EBDC /* AppsSearchController.swift */; };
+		8EE08067227505B500D7EBDC /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE08066227505B500D7EBDC /* SearchResultCell.swift */; };
+		8EE08069227506AD00D7EBDC /* CreateStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE08068227506AD00D7EBDC /* CreateStackView.swift */; };
+		8EE0806C2275079E00D7EBDC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0806B2275079E00D7EBDC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		8EE080532274AEFF00D7EBDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EE080592274AFB900D7EBDC /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8EE0805C2274BB5100D7EBDC /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		8EE08066227505B500D7EBDC /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		8EE08068227506AD00D7EBDC /* CreateStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStackView.swift; sourceTree = "<group>"; };
+		8EE0806B2275079E00D7EBDC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +66,12 @@
 		8EE080432274AEFE00D7EBDC /* AppleStoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				8EE0806D2275081D00D7EBDC /* Cells */,
+				8EE0806A2275079300D7EBDC /* Extensions */,
 				8EE0805B2274BB2A00D7EBDC /* Controller */,
-				8EE080462274AEFE00D7EBDC /* ViewController.swift */,
 				8EE080482274AEFE00D7EBDC /* Main.storyboard */,
 				8EE0804E2274AEFF00D7EBDC /* Assets.xcassets */,
+				8EE080442274AEFE00D7EBDC /* AppDelegate.swift */,
 				8EE080502274AEFF00D7EBDC /* LaunchScreen.storyboard */,
 				8EE080532274AEFF00D7EBDC /* Info.plist */,
 				8EE0804B2274AEFE00D7EBDC /* AppleStoreApp.xcdatamodeld */,
@@ -74,11 +82,28 @@
 		8EE0805B2274BB2A00D7EBDC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8EE080592274AFB900D7EBDC /* BaseTabBarController.swift */,
-				8EE080442274AEFE00D7EBDC /* AppDelegate.swift */,
+				8EE080462274AEFE00D7EBDC /* ViewController.swift */,
 				8EE0805C2274BB5100D7EBDC /* AppsSearchController.swift */,
+				8EE080592274AFB900D7EBDC /* BaseTabBarController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8EE0806A2275079300D7EBDC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8EE08068227506AD00D7EBDC /* CreateStackView.swift */,
+				8EE0806B2275079E00D7EBDC /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EE0806D2275081D00D7EBDC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8EE08066227505B500D7EBDC /* SearchResultCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +177,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE08069227506AD00D7EBDC /* CreateStackView.swift in Sources */,
 				8EE0805A2274AFB900D7EBDC /* BaseTabBarController.swift in Sources */,
+				8EE08067227505B500D7EBDC /* SearchResultCell.swift in Sources */,
+				8EE0806C2275079E00D7EBDC /* Extensions.swift in Sources */,
 				8EE080472274AEFE00D7EBDC /* ViewController.swift in Sources */,
 				8EE080452274AEFE00D7EBDC /* AppDelegate.swift in Sources */,
 				8EE0805D2274BB5100D7EBDC /* AppsSearchController.swift in Sources */,
