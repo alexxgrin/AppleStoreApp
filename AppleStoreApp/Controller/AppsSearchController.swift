@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class AppsSearchController: UICollectionViewController {
 
     override func viewDidLoad() {
