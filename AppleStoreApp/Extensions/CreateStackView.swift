@@ -10,7 +10,7 @@ import UIKit
 
 class CreateStackView: UIStackView {
     
-    init(arrangedSubviews: [UIView], spacing: CGFloat, translatesAutoresizingMaskIntoConstraints: Bool, clipsToBounds: Bool, masksToBounds: Bool) {
+    init(arrangedSubviews: [UIView], spacing: CGFloat, translatesAutoresizingMaskIntoConstraints: Bool, clipsToBounds: Bool, masksToBounds: Bool, distribution: UIStackView.Distribution, contentMode: UIView.ContentMode, alignment: UIStackView.Alignment) {
         super.init(frame: .zero)
         
         arrangedSubviews.forEach({addArrangedSubview($0)})
@@ -20,6 +20,9 @@ class CreateStackView: UIStackView {
         self.translatesAutoresizingMaskIntoConstraints = translatesAutoresizingMaskIntoConstraints
         self.clipsToBounds = clipsToBounds
         self.layer.masksToBounds = masksToBounds
+        self.distribution = distribution
+        self.contentMode = contentMode
+        self.alignment = alignment
     }
     
     required init(coder: NSCoder) {

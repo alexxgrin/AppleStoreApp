@@ -132,7 +132,7 @@ extension UIColor {
     
 }
 
-let imageCache = NSCache<AnyObject, AnyObject>()
+    let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
     
@@ -161,8 +161,7 @@ extension UIImageView {
                 self.image = UIImage(data: data!)
             }
             
-            }.resume()
-        
+        }.resume()
     }
 }
 
