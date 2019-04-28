@@ -10,13 +10,39 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
+    //////CREATING AN OPTION TO REFACTOR THE COLLECTION VIEW CELLS RESULT///////
+    /////////////IT WILL LOAD FROM THIS VARIABLE///////////////////////////////
+    var appResult: Result! {
+        didSet {
+            nameLabel.text = appResult.trackName
+            categoryLabel.text = appResult.primaryGenreName
+            ratingsLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
+            
+            let url = URL(string: appResult.artworkUrl100)
+            appIconImageView.sd_setImage(with: url)
+            
+            screenshot1ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+            
+            if appResult.screenshotUrls.count > 1 {
+                screenshot2ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+            }
+            if appResult.screenshotUrls.count > 2 {
+                screenshot3ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+            }
+        }
+    }
+    
     let appIconImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.backgroundColor = .red
-        iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        iv.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        iv.layer.cornerRadius = 12
-        return iv
+        let imageview = UIImageView()
+        imageview.backgroundColor = .red
+        imageview.translatesAutoresizingMaskIntoConstraints = false
+        imageview.layer.masksToBounds = false
+        imageview.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        imageview.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        imageview.layer.cornerRadius = 10
+        imageview.clipsToBounds = true
+        
+        return imageview
     }()
     
     let nameLabel: UILabel = {
@@ -55,7 +81,14 @@ class SearchResultCell: UICollectionViewCell {
     
     func createScreenshotImageView() -> UIImageView {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.backgroundColor = .blue
+        imageView.layer.cornerRadius = 8
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+
         return imageView
     }
     
