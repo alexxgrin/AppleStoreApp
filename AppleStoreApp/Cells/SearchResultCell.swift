@@ -10,8 +10,12 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
+    
+    ////////////////////////////////////////////////////////////////////////////
     //////CREATING AN OPTION TO REFACTOR THE COLLECTION VIEW CELLS RESULT///////
     /////////////IT WILL LOAD FROM THIS VARIABLE///////////////////////////////
+    
+    
     var appResult: Result! {
         didSet {
             nameLabel.text = appResult.trackName
@@ -34,7 +38,6 @@ class SearchResultCell: UICollectionViewCell {
     
     let appIconImageView: UIImageView = {
         let imageview = UIImageView()
-        imageview.backgroundColor = .red
         imageview.translatesAutoresizingMaskIntoConstraints = false
         imageview.layer.masksToBounds = false
         imageview.widthAnchor.constraint(equalToConstant: 64).isActive = true
@@ -84,7 +87,6 @@ class SearchResultCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .blue
         imageView.layer.cornerRadius = 8
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor

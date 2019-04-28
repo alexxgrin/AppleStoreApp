@@ -9,9 +9,11 @@
 import UIKit
 import SDWebImage
 
-class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     fileprivate let cellId = "cellId"
+    
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,12 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         collectionView.backgroundColor = .white
         
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
+        
+        collectionView.addSubview(enterSearchTermLabel)
+        enterSearchTermLabel.fillSuperview(padding: .init(top: 100, left: 50, bottom: 0, right: 50))
+        enterSearchTermLabel.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
+        
+        setupSearchBar()
         
         fetchITunesApps()
         
@@ -31,7 +39,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
 
     fileprivate func fetchITunesApps() {
 
-        Service.shared.fetchApps { (results, err)  in
+        Service.shared.fetchApps(searchTerm: "") { (results, err)  in
             if let err = err {
                 print("Failed to fetch apps: ", err)
                 return
@@ -49,12 +57,45 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         
 
     }
+    
+    fileprivate func setupSearchBar() {
+        //////SETTING UP THE SEARCH BAR AT THE NAVIGATION ITEM/////////
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+    }
+    
+    fileprivate let enterSearchTermLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Please enter search text..."
+        label.textAlignment = .center
+        label.font = UIFont(name: "Avenir", size: 17)
+        
+        return label
+    }()
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        
+        Service.shared.fetchApps(searchTerm: searchText, completion: { (res, err) in
+            
+            self.appResults = res
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.collectionView.reloadData()
+            }
+            
+        })
+    }
      
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 350)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        enterSearchTermLabel.isHidden = appResults.count != 0
         return appResults.count
     }
     
