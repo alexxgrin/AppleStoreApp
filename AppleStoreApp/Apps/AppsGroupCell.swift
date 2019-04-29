@@ -14,8 +14,6 @@ class AppsGroupCell: UICollectionViewCell {
     
     let horizontalController = AppsHorizontalController()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white

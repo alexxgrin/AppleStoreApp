@@ -28,7 +28,7 @@
 		8EE240B72275F855008BD095 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE240B62275F855008BD095 /* AppsPageHeader.swift */; };
 		8EE240B92275FAA0008BD095 /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE240B82275FAA0008BD095 /* AppsHeaderHorizontalController.swift */; };
 		8EE240BB2275FD36008BD095 /* AppHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE240BA2275FD36008BD095 /* AppHeaderCell.swift */; };
-		8EF7A8CA2275941F006D7221 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7A8C92275941F006D7221 /* SearchResult.swift */; };
+		8EF7A8CA2275941F006D7221 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7A8C92275941F006D7221 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,7 @@
 		8EE240B62275F855008BD095 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		8EE240B82275FAA0008BD095 /* AppsHeaderHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderHorizontalController.swift; sourceTree = "<group>"; };
 		8EE240BA2275FD36008BD095 /* AppHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderCell.swift; sourceTree = "<group>"; };
-		8EF7A8C92275941F006D7221 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		8EF7A8C92275941F006D7221 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 		8EF7A8C822759411006D7221 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8EF7A8C92275941F006D7221 /* SearchResult.swift */,
+				8EF7A8C92275941F006D7221 /* Models.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE240BB2275FD36008BD095 /* AppHeaderCell.swift in Sources */,
-				8EF7A8CA2275941F006D7221 /* SearchResult.swift in Sources */,
+				8EF7A8CA2275941F006D7221 /* Models.swift in Sources */,
 				8EE08069227506AD00D7EBDC /* CreateStackView.swift in Sources */,
 				8EE240B92275FAA0008BD095 /* AppsHeaderHorizontalController.swift in Sources */,
 				8EE0805A2274AFB900D7EBDC /* BaseTabBarController.swift in Sources */,

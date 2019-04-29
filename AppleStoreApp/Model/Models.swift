@@ -13,6 +13,22 @@ struct SearchResult: Decodable {
     let results: [Result]
 }
 
+struct AppGroup: Decodable {
+    let feed: Feed
+    
+}
+
+struct Feed: Decodable {
+    let title: String
+    let results: [FeedResult]
+}
+
+struct FeedResult: Decodable {
+    let name: String
+    let artistName: String
+    let artworkUrl100: String
+}
+
 struct Result: Decodable {
     let trackName: String
     let primaryGenreName: String
@@ -27,13 +43,13 @@ struct Course: Decodable {
     let name: String?
     let link: String?
     let imageUrl: String?
-    
-    //    init(json: [String: Any]) {
-    //        id = json["id"] as? Int ?? -1
-    //        name = json["name"] as? String ?? ""
-    //        link = json["link"] as? String ?? ""
-    //        imageUrl = json["imageUrl"] as? String ?? ""
-    //    }
+}
+
+struct SocialApp: Decodable {
+    let id: String
+    let name: String
+    let imageUrl: String
+    let tagline: String
 }
 
 
